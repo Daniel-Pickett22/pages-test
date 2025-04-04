@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Get references to DOM elements
     const tempSlider = document.getElementById('tempSlider');
     const tempDisplay = document.getElementById('tempDisplay');
     const rainCheck = document.getElementById('rainCheck');
@@ -17,15 +18,19 @@ document.addEventListener('DOMContentLoaded', function() {
         let suggestion = "";
 
         // Determine suggestion based on temperature and rain
-        if (temperature >= 70 && !isRaining) {
+        if (temperature == 100) {
+            suggestion = "Wear nothing at this point..."
+        } else if (temperature >= 70 && !isRaining) {
             suggestion = "T-shirt and shorts!";
         } else if (temperature >= 70 && isRaining) {
             suggestion = "T-shirt, but don't forget a light rain jacket!";
         } else if (temperature < 70 && isRaining) {
             suggestion = "Coat and umbrella!";
-        } else {
+        } else if (temperature >= 32 && temperature < 70) {
             suggestion = "Sweater and jeans!";
-        }
+        } else {
+            suggestion = "Thick winter coat and pants!";
+        } 
 
         // Display the clothing suggestion
         clothingSuggestion.textContent = suggestion;
