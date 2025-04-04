@@ -4,28 +4,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const feedBtn = document.getElementById('feedBtn');
     const playBtn = document.getElementById('playBtn');
     const napBtn = document.getElementById('napBtn');
+    let resetTimer;
 
-    // Generate clothing suggestion based on temperature and rain status when button is clicked
     feedBtn.addEventListener('click', function() {
+        clearTimeout(resetTimer);
         petFace.textContent = ':)'
         moodText.textContent = 'Happy'
-        setTimeout(() => {
+        resetTimer = setTimeout(() => {
             petFace.textContent = ':|'
             moodText.textContent = 'Normal'
         }, 5000);
     });
     playBtn.addEventListener('click', function() {
+        clearTimeout(resetTimer);
         petFace.textContent = ':D'
         moodText.textContent = 'Excited'
-        setTimeout(() => {
+        resetTimer = setTimeout(() => {
             petFace.textContent = ':|'
             moodText.textContent = 'Normal'
         }, 5000);
     });
     napBtn.addEventListener('click', function() {
+        clearTimeout(resetTimer);
         petFace.textContent = '-_-'
         moodText.textContent = 'Sleepy'
-        setTimeout(() => {
+        resetTimer = setTimeout(() => {
             petFace.textContent = ':|'
             moodText.textContent = 'Normal'
         }, 5000);
